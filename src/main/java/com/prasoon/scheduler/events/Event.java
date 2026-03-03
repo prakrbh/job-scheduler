@@ -1,11 +1,15 @@
 package com.prasoon.scheduler.events;
 
+import com.prasoon.scheduler.simulation.SimulationEngine;
+
 public abstract class Event implements Comparable<Event> {
 
     protected final int time;
+    protected final SimulationEngine engine;
 
-    public Event(int time) {
+    public Event(int time, SimulationEngine engine) {
         this.time = time;
+        this.engine = engine;
     }
 
     public int getTime() {
